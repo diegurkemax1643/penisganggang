@@ -1,3 +1,54 @@
-
-hallo dominate
-nga
+dominate.win - Changelog
+=== v1.0.0 ===
+[Added]
+- Ragebot with per-weapon-group configuration (pistol, SMG, rifle, shotgun, sniper, LMG)
+- Silent aim, no-spread, double-tap with charge preview
+- Configurable hitboxes, hit chance, minimum damage, multipoint scanning
+- Auto-stop, body aim, FOV limiter, penetration crosshair
+- Extrapolation (up to 16 ticks) and backtrack (up to 12 ticks)
+- Legitbot with FOV circle, smoothing, and recoil control system (RCS)
+- Triggerbot with delay, hitchance, head-only, and seed mode
+- Anti-aim with pitch/yaw modes, manual direction overrides, hide shots
+- Quick peek with particle effects, duck peek, autostop
+- Zeusbot, knifebot, auto revolver, auto scope
+- Player ESP: bounding box, skeleton, health bar, ammo bar, name, weapon, info flags
+- Off-screen arrows with glow and directional indicators
+- Player chams with 19 material types (liquid, metallic, glow, hologram, etc.)
+- Backtrack chams and on-shot chams with fade
+- Player glow for enemy, team, and local player
+- Item ESP with text/icon display per weapon group
+- Projectile ESP for all grenade types with damage indicators
+- Bomb timer and spectator list with avatars
+- Viewmodel chams for weapon, arms, and hands
+- Bunny hop, air strafe, edge jump, edge bug, jump bug
+- Fast ladder, edge stop, slow walk, no landing inaccuracy
+- Advanced strafer with subtick yaw manipulation
+- Custom FOV, thirdperson, freecam, custom aspect ratio
+- Crosshair overlay, scope overlay replacement
+- Velocity display with graph, keystrokes display
+- Hit logs, miss logs, console logs, chat logs
+- Hit sounds and death sounds (12 built-in + custom WAV)
+- Hit effects and death effects with 12 particle types
+- Bullet tracers, impact visualization, hit markers
+- Grenade trajectory prediction with damage calculation
+- Skin changer with paint kit, wear, seed, and StatTrak
+- Knife changer, glove changer, agent changer
+- Custom weapon models from disk
+- Weather system: snow, rain, stars, ash, custom particles
+- Custom fog, surface wetness, wind control
+- Custom skybox, lighting, world color, bloom, gamma
+- Smoke color, fire color, explosion color override
+- Depth of field control, ambient lighting
+- Remove smoke, flash reduction, remove visual recoil
+- Remove decals, remove legs, remove scope, remove fog
+- Auto buy, reveal radar, auto accept, preserve killfeed
+- Clantag changer, name override, vote reveal
+- Walk trail effects (dust, sparks, fire, electric, snow, etc.)
+- Dynamic light, motion blur, chromatic aberration
+- Scoreboard weapon display via Panorama injection
+- Widget system (modern, classic, neo, glass styles)
+- Keybind list overlay
+- JSON config system with LZ4 compression and share codes
+- Full menu with tabs: ragebot, legitbot, visuals, world, misc, skins, config
+- Steam auto-launch loader with live DLL download
+- Dark UI loader with changelog tab and session info
