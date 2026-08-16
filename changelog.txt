@@ -1,4 +1,3 @@
-=== dominate.win v1.0.0 - Key Features ===
 
 [Ragebot]
 - Silent aim, no-spread, double-tap
