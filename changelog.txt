@@ -1,1 +1,237 @@
-helloworld
+## CHANGELOG
+
+### 18.08.2026 – Update: Hats, Hitmarker & Extrapolation
+
+**Hats (HUD > Hat)**
+- 6 new hat types added: **Flower, Wizard, Cowboy, Heart, Bow, Party** → **14 hats in total** (Kasa, Bucket, Halo, Crown, Top Hat, Propeller, Horns, Star, Flower, Wizard, Cowboy, Heart, Bow, Party)
+- **All hats animated**:
+  - Propeller: spins
+  - Star: slow rotation
+  - Heart: tilt-wobble animation + glow
+  - Top hat & others: additional animations
+- Color selection (color + secondary color), glow + glow strength for all hats
+
+**Hitmarker (Misc > Hit Marker)**
+- **7 styles** in the selection menu: `cross`, `spin`, `plus`, `star`, `diamond`, `corners`, `circle`
+- Every style with its own **rotation/animation**:
+  - spin/star/diamond/corners/plus: rotate at different speeds
+  - spin: additional size pulsing
+- Expand animation on appear (as before), **glow for all styles**
+- Types still: classic / damage / both
+
+**Extrapolation completely rewritten (Rage > Aimbot > Extrapolation)**
+- **3 selectable modes**: `linear`, `turn`, `adaptive`
+  - linear: straight-line prediction
+  - turn: accounts for rotations (turn rate)
+  - adaptive: combines both based on target movement (recommended)
+- **New settings** in popup:
+  - `max ticks` (1–30, default 16)
+  - `scale` (0–150 %, default 100 %)
+  - `max turn rate` (1–60 °/tick, default 24)
+- Weighted turn-rate tracking over up to 9 records, speed-trend detection, deadzone (0.75 °/tick), speed cap 320, abort when turn rate exceeded, coherence-based scaling in adaptive mode
+
+**Misc**
+- Improved hit/miss log analysis (miss reasons: lag compensation, spread, prediction error, occlusion, impact mismatch, server discrepancy, shoot position mismatch, death)
+
+---
+
+## COMPLETE FEATURE LIST
+
+### Menu structure
+7 tabs: **Rage | Legit | Player | World | Skins | Misc | Config**
+- Global **search** across all settings (with category path & key badge)
+- **Splash/intro screen** on load
+- **Player model preview** (Player tab, side selectable)
+- **Mascot** top-right in menu (GIF animation, size)
+
+---
+
+### 1. RAGE (per weapon group: pistol / smg / rifle / shotgun / sniper / lmg)
+
+**Aimbot**
+- Enable mode: always / toggle / hold (with keybind)
+- **VAC Bypass**
+- **Silent Aim**
+- **No Spread**
+- **Double Tap** (charge preview, quick bolt, colors for charging/charged/failed)
+- **No Spread Legacy**
+- Force Shot in Air / on Ground
+- **Extrapolation**: mode (linear/turn/adaptive), max ticks, scale, max turn rate
+- Aim Indicator
+- **Penetration Dots** (color, min damage, size, glow)
+- Max FOV (1–180°)
+- Hit Chance (25–100 %)
+- Min Damage (5–125)
+- **Backtrack** + Max Backtrack (1–30 ticks)
+- **Hit Chance Override** (with keybind, value 0–100 %)
+- **Min Damage Override** (with keybind, value 0–130)
+
+**Multipoint / Extras**
+- Force B-Aim
+- Dynamic Point Scale
+- Debug Multipoints
+- Point Scale (0–100 %)
+- Hitboxes: head / chest / stomach / arms / legs / **paws**
+
+**Anti-Aim**
+- Pitch: off / down / up / zero / jitter / custom (+ value)
+- Yaw: off / backward / left / right / spin (+ spin speed) / jitter / at target
+- Yaw Add (−180…+180°)
+- At Targets, Disable on Knife, Disable on Grenade, Compensate Roll
+- Force Left / Right / Back / Forward (manual direction)
+- **Hide Onshot**
+- Avoid Backstab
+- Direction Indicator (color, glow, glow strength)
+
+**Other Bots & Peek**
+- **Auto Revolver** (+ Auto Scope)
+- **Zeusbot** (max FOV, drop after)
+- **Knifebot** (max FOV)
+- **Quick Peek** (base/retracting color)
+- **Duck Peek**
+
+---
+
+### 2. LEGIT (per weapon group)
+
+- Enable mode: always / toggle / hold (with keybind)
+- **Aimbot**: FOV (0.5–30°), smooth, hitboxes (head/chest/stomach/arms/legs), FOV visualization
+- **Recoil Control**: min/max percentage
+- **Standalone RCS**: strength, min/max
+- **Triggerbot**: delay (0–250 ms), hitchance, head only, **seeded** (seed stealing)
+- **Autowall**: min damage (1–125)
+
+---
+
+### 3. PLAYER (Enemy / Team / Local)
+
+**ESP Overlay** (configured separately per side)
+- Bounding Box: style (full/cornered), fill, outline, corner length, visible/occluded color
+- Skeleton: mode (normal/backtrack), thickness, visible/occluded color
+- Health Bar: position (left/top/bottom), outline, gradient, value display, glow, colors (full/low/background/outline/text/glow), glow strength, thickness, **damage delay** (damage color + speed)
+- Ammo Bar: like health bar (position, colors, glow, thickness)
+- Name (color)
+- Weapon: display (text/icon/text+icon), text/icon color
+- Info Flags: money, armor, kit, scoped, defusing, flashed, ping, distance (per-flag colors)
+- **OOF Arrows**: glow, width/height, radius X/Y, glow strength, visible/occluded color
+
+**Chams** (per side)
+- 3 layers (primary/secondary/overlay), each with **19 materials**: liquid, metallic, matte, flat, bloom, outlines, glow, electric, distortion, hologram, pearl + (iz) variants of each
+- **XQZ** (through walls, Enemy): 3 layers
+- **Backtrack Chams** (Enemy): 2 layers
+- **Onshot Chams** (Enemy): 2 layers + fade time
+- Ragdoll Chams: 2 layers
+- Local: **Lower Opacity** (only while scoped), viewmodel **Weapon Chams** & **Arms Chams** (3 layers each)
+
+**Glow**
+- Player glow (per side), ragdoll glow (per side)
+
+---
+
+### 4. WORLD
+
+**Item ESP** (per group: pistol/smg/rifle/shotgun/sniper/utility)
+- Item ESP: display (text/icon/text+icon), max distance, colors
+- Item Chams: 2 layers
+- Item Glow (color)
+
+**Projectiles** (per group: HE / flash / smoke / molotov / decoy / **inferno**)
+- Projectile ESP: display, max distance, colors
+- **Inferno ESP**: fill/outline color, outline thickness, glow
+- **Landing Indicator** (HE/Molotov/Inferno): arc/icon color, background, glow
+- **Bomb Timer**
+
+**Scene**
+- Skybox material (+ refresh), skybox color (sky/cloud/sun)
+- World/smoke/fire/explosion color
+- **Lighting** (intensity + color), **Bloom**, **Gamma**
+- **Depth of Field** (near/far blurry/crisp)
+
+**Weather**
+- Weather: snow / rain / stars / ash / custom (+ color)
+- **Fog** (density, anisotropy, draw distance, color)
+- **Wetness** (density, speed)
+- **Wind** (strength, direction, turbulence)
+
+---
+
+### 5. SKINS
+
+**Guns / Knives / Gloves**
+- Full skin browser: search, rarity colors, equip/remove on click
+- Skin context menu (right-click): **StatTrak** (on/off), **Wear** (0.0000–1.0000), **Seed** (0–1000), Remove Skin
+- Knives/gloves: only one active at a time
+
+**Agents**
+- CT & T agent selected separately, agent browser with search
+- **Custom Agent**: own models from `csgo\custom` (combo + refresh)
+
+**Custom**
+- **Custom Weapon Models** from `csgo\c weapon`: pick a model, assign to currently held weapon with a button, list with remove button per weapon
+
+---
+
+### 6. MISC
+
+**Impacts / Hits**
+- **Hit Logs**: duration, max entries, background/border/progress line/indicator bar, all colors
+- Console Logs, Chat Logs, **Miss Logs** (with reason analysis)
+- **Hit Sound**: 10 types (shop click, home click, bell, killcard, bullet casing, coin pickup, item drop, popcan, key press) + **custom .wav** (file input, selection, preview), volume
+- **Death Sound**: like hit sound
+- **Hit Marker**: type (classic/damage/both), **7 styles** (cross/spin/plus/star/diamond/corners/circle, animated), duration, color, glow
+- **Hit Effect**: 12 particles (fade, dust motes, chamber cube spark, teleport sparks, fireworks trail, embers, firework crate, HE explosion, explosion, launch, angel), color, duration, strength, **overlay** (color/strength/duration)
+- **Death Effect**: like hit effect (+ launch strength 100–1000)
+- Scoreboard Weapons (color)
+- **Bullet Impacts**: type (overlay/sparks/both), fill/edge color, glow, spark color
+- **Bullet Tracers** (duration, color)
+
+**Visuals**
+- **Projectile Trajectory** (straight throw, held/thrown colors, damage colors)
+- **Dynamic Light** (color, radius up to 15000, Z-offset)
+- **Penetration Crosshair** (can-pen/blocked colors, glow)
+- **Walk Trail** (8 particles: dust/sparks/smoke/fire/electric/snow/embers/blood, spawn rate)
+- **Grenade Trail** (color, thickness, duration, filter, fade, glow, game trail)
+- **Movement Trail** (duration, thickness, color)
+
+**Movement**
+- **Bhop**, Auto W, **Airstrafe** (fully directional + force directions), Test Strafer
+- **Slow Walk** (percentage)
+- **Jumpbug**, **Fastladder**, **Edgejump**, **Edgestop**, **No Landing Inaccuracy**
+- **Edgebug**: 5 modes (loose / edge trace / no jump held / min speed / strict vz), passes, jump steps
+
+**Other**
+- Reveal Radar, Preserve Killfeed, Disable Game Logs, Auto Accept
+- **Key Bind List** (blur, all colors)
+- **Status List** (selectable displays: weapon, min damage, force shot, hitchance override, double tap, silent aim, no spread, body aim, backtrack)
+- **Spotify Display** (colors, scale, rounded, blur)
+- **Spectator List** (max entries, avatars, background/border, colors)
+- **Motion Blur** (strength)
+- **Free Spectate** (+ thirdperson)
+- **Vote Reveal**, **Auto Buy** (primary/secondary weapon, armor, defuser, taser, 5 grenades), **Clantag**, **Override Name**, **Toxic Text on Kill**, **Chat Spam** (interval + message), **Mascot**
+
+**Removals**
+- Crosshair, Scope, Zoom, Overhead, Legs, Recoil, Skybox Fog, 3D Skybox, Decals, Smoke
+- Flash Alpha (0–100 %)
+
+**Camera**
+- Custom FOV (60–150) + scoped FOV override (10–90)
+- Thirdperson (distance 35–200, hull size)
+- Custom Aspect Ratio (1.000–1.780)
+- **Freecam** (speed 50–1000)
+- Viewmodel Adjust (offset X/Y/Z, viewmodel FOV)
+
+**HUD**
+- Crosshair Overlay (size, outline, colors)
+- **Scope Overlay**: style (gradient/cross), line length, gap, thickness, anim speed, fade-in, glow
+- Keystrokes
+- **Hat**: 14 types (kasa, bucket, halo, crown, top hat, propeller, horns, star, flower, wizard, cowboy, heart, bow, party) – all animated, color/secondary color, glow
+
+---
+
+### 7. CONFIG
+
+- **Menu Key** (keybind)
+- Config list with search, load on click
+- **Save / Reset / Delete** (each with 2-step confirmation)
+- **Import** from clipboard (auto format detection)
+- **Export** as share code (words) to clipboard
